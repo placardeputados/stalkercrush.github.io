@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #F8F8F8;
+    font-family: Arial;
+    color: #4b4f54;
+    border: none;
+    font-size: 100%;
+}
+
+.header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 12px;
+        box-sizing: border-box;
+        background: #FFF;
+        box-shadow: 0 0 12px #AAA;
+    }
+    
+        .header input {
+            width: 100%;
+            padding: 12px 74px 12px 12px;
+            box-sizing: border-box;
+            border: 1px solid #DDD;
+            
+            border-radius: 4px;
+            box-shadow: 2px 2px 2px #EEE inset;
+        }
+        
+            .header input:focus {
+                background: #F8F8F8;
+            }
+            
+        .header .btn.btn-primary {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            border-radius: 0 4px 4px 0;
+        }
+
+.group-box {
+    position: relative;
+    width: 97%;
+    max-width: 600px;
+    margin: auto;
+    padding-top: 60px;
+}
+
+    .group-box .box {
+        margin: 8px 0;
+        padding: 0;
+        background: #FFF;
+        overflow: hidden;
+        
+        border-radius: 4px;
+        box-shadow: 0 0 7px #CCC;
+    }
+    
+        .group-box .box.main {
+            padding: 12px;
+        }
+        
+            .group-box .box.main .btn.btn-primary {
+                width: 100%;
+            }
+
+            .group-box .box.main .title-box {
+                text-align: center;
+                padding: 12px 0;
+            }
+            
+                .group-box .box.main .title-box small {
+                    font-size: 0.5em;
+                    color: #AAA;
+                }
+
+        .group-box .box .title-box {
+            margin: 0;
+            padding: 12px;
+            font-size: 1.5em;
+        }
+
+        .group-box .box .image-view {
+            display: block;
+            width: 100%;
+            border-radius: 0 0 4px 4px;
+        }
+        
+        .group-box .box .user-profile {
+            padding: 8px 0 8px 100px;
+            
+            background: #F8F8F8;
+        }
+
+            .group-box .box .user-profile b {
+                font-size: 1em;
+            }
+            
+            .group-box .box .user-profile span {
+                display: block;
+                font-size: 0.8em;
+            }
+            
+                .group-box .box .user-profile ~ .btn.btn-success {
+                    margin-top: 6px;
+                }
+            
+        .group-box .box .image-profile {
+            float: left;
+            width: 90px;
+            margin: 4px;
+            border-radius: 2px;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            font-size: 0.9em;
+            color: #fff;
+            border-radius: 4px;
+        }
+        
+            .btn:hover {
+                cursor: pointer;
+            }
+
+            .btn.btn-success {
+                background: #5cb85c;
+                border: 1px solid #4cae4c;
+                border-radius: 4px;
+            }
+            
+                .btn.btn-success:hover {
+                    background-color: #449d44;
+                    border-color: #398439;
+                }
+        
+            .btn.btn-primary {
+                background: #337ab7;
+                border: 1px solid #2e6da4;
+            }
+            
+                .btn.btn-primary:hover {
+                    background-color: #286090;
+                    border-color: #204d74;
+                }
+                
+
+                

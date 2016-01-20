@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Receiving authentication</title>
+</head>
+<body>
+<p>Finishing authentication...</p>
+<script>
+	var token = window.location.hash.split('=')[1];
+	window.opener.postMessage({ token: token }, '*');
+	window.close();
+</script>
+</body>
+</html>

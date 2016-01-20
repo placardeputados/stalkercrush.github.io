@@ -1,5 +1,5 @@
 <div class="header">
-  <input type="text" id="search" placeholder="Pesquise por @usuário" />
-  <button id="btnSearch" onclick="alert('Clicou no botão meu brother!');" class="btn btn-primary">Buscar</button>
+  <input type="text" id="search" placeholder="Pesquise por @usuário" data-ng-model="appCtrl.query"/>
+  <button id="btnSearch" data-ng-click="appCtrl.search(appCtrl.query)" class="btn btn-primary">Buscar</button>
 </div>
 <ui-view/>

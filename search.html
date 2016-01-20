@@ -2,28 +2,11 @@
   <p class="title-box">Quem você quer espiar?</p>
   <p class="text-box">Use a pesquisa acima para localizar quem você deseja espiar no Instagram.</p>
 </div>
-<hr />
-<div class="box">
-  <img class="image-profile" src="https://igcdn-photos-d-a.akamaihd.net/hphotos-ak-xta1/t51.2885-19/s150x150/11950570_1684158828496131_1763669993_a.jpg" />
+<div class="box" data-ng-repeat="user in searchCtrl.users">
+  <img class="image-profile" data-ng-src="{{user.profile_picture}}" />
   <div class="user-profile">
-    <b>Maria Eduarda Lima</b>
-    <span>@mariahb</span>
+    <b>{{user.full_name}}</b>
+    <span>@{{user.username}}</span>
   </div>
-  <button class="btn btn-success">Ver este</button>
-</div>
-<div class="box">
-  <img class="image-profile" src="https://igcdn-photos-d-a.akamaihd.net/hphotos-ak-xta1/t51.2885-19/s150x150/11950570_1684158828496131_1763669993_a.jpg" />
-  <div class="user-profile">
-    <b>Maria Eduarda Lima</b>
-    <span>@mariahb</span>
-  </div>
-  <button class="btn btn-success">Ver este</button>
-</div>
-<div class="box">
-  <img class="image-profile" src="https://igcdn-photos-d-a.akamaihd.net/hphotos-ak-xta1/t51.2885-19/s150x150/11950570_1684158828496131_1763669993_a.jpg" />
-  <div class="user-profile">
-    <b>Maria Eduarda Lima</b>
-    <span>@mariahb</span>
-  </div>
-  <button class="btn btn-success">Ver este</button>
+  <button class="btn btn-success" data-ng-click="searchCtrl.stalkear(user.id)">Stalkear</button>
 </div>

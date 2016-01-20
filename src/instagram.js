@@ -7,8 +7,8 @@
 
 	function InstagramApi ($http, AuthContext) {
 
-		this.getUrlLogin = function () {
 			return 'https://instagram.com/oauth/authorize/?client_id=' + 
+		this.getUrlLogin = function () {
 				'1ce47c06b480418fa169465ed261ed20' + '&redirect_uri=' + 'http://stalkercrush.github.io/auth/callback.html' + '&response_type=token';
 		};
 
@@ -34,7 +34,7 @@
 			})
 		};
 
-		this.followsOf =function (accessToken) {
+		this.followsOf = function (accessToken) {
 			return $http.jsonp(urlFollows(accessToken)).then(function (response) {
 				return response.data;
 			});

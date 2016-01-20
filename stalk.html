@@ -5,7 +5,7 @@
   </div>
 </div>
 <div class="box" data-ng-repeat="media in stalkCtrl.medias">
-  <p class="title-box">Postado em           <b>25/12/2015</b>
+  <p class="title-box">Upload in <b>{{media.caption.created_time * 1000 | date:"dd/MM/yy 'at' h:mma"}}</b>
   </p>
   <img class="image-view" data-ng-src="{{media.images.standard_resolution.url}}" />
 </div>

@@ -28,11 +28,17 @@
 			});
 		};
 
-		this.mediasOf = function (userId) {
-			return $http.jsonp(urlMedias(userId)).then(function (response) {
+		this.mediasOf = function (userId, accessToken) {
+			return $http.jsonp(urlMedias(userId, accessToken)).then(function (response) {
 				return response.data.data;
 			})
-		}
+		};
+
+		this.followsOf =function (accessToken) {
+			return $http.jsonp(urlFollows(accessToken)).then(function (response) {
+				return response.data;
+			});
+		};
 
 		function urlInformation (accessToken) {
 			return 'https://api.instagram.com/v1/users/self/?access_token=' + accessToken + '&callback=JSON_CALLBACK';
@@ -42,8 +48,12 @@
 			return 'https://api.instagram.com/v1/users/search?q='+ query +'&access_token=' + AuthContext.get().accessToken + '&callback=JSON_CALLBACK';
 		}
 
-		function urlMedias (userId) {
-			return 'https://api.instagram.com/v1/users/'+ userId +'/media/recent/?access_token=' + AuthContext.get().accessToken + '&callback=JSON_CALLBACK';
+		function urlMedias (userId, accessToken) {
+			return 'https://api.instagram.com/v1/users/'+ userId +'/media/recent/?access_token=' + accessToken + '&callback=JSON_CALLBACK';
+		}
+
+		function urlFollows (accessToken) {
+			return 'https://api.instagram.com/v1/users/self/follows?access_token=' + accessToken + '&callback=JSON_CALLBACK';
 		}
 
 	}

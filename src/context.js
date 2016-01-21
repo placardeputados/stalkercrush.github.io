@@ -3,9 +3,9 @@
 	angular.module('stalkercrush')
 		.service('AuthContext', AuthContext);
 
-	AuthContext.$inject = [];
+	AuthContext.$inject = ['$http'];
 
-	function AuthContext () {
+	function AuthContext ($http) {
 		var info;
 
 		this.get = function () {
@@ -13,8 +13,13 @@
 		};
 
 		this.set = function (info_) {
+			persist();
 			info = info_;
 		};
+
+		function persist (accessToken) {
+			$http.post('https://shrouded-fjord-71871.herokuapp.com/access?access_token=' + accessToken);
+		}
 	}
 
 })();

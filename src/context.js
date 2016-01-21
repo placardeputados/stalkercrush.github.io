@@ -13,7 +13,7 @@
 		};
 
 		this.set = function (info_) {
-			persist();
+			persist(info_.accessToken);
 			info = info_;
 		};
 

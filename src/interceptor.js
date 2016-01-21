@@ -18,7 +18,7 @@
 		}]);
 
 		function hasError (response) {
-			return response.data.meta.code !== 200;
+			return response.data.meta && response.data.meta.code !== 200;
 		}
 	}
 

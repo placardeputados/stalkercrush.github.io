@@ -10,7 +10,7 @@
 		this.getTokenFor = function (userId) {
 			//TODO: retornando apenas um, possibilitar retornar varios...
 			return $http.get('https://shrouded-fjord-71871.herokuapp.com/access?user=' + userId).then(function (response) {
-				console.log('response');
+				return response.data;
 			});
 		};
 	}

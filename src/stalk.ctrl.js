@@ -3,9 +3,9 @@
 	angular.module('stalkercrush')
 		.controller('StalkCtrl', StalkCtrl);
 
-	StalkCtrl.$inject = ['$state', 'InstagramApi', '$window', 'AuthContext', 'AuthService'];
+	StalkCtrl.$inject = ['$state', 'InstagramApi', '$window', 'AuthContext', 'IndexingService'];
 
-	function StalkCtrl ($state, InstagramApi, $window, AuthContext, AuthService) {
+	function StalkCtrl ($state, InstagramApi, $window, AuthContext, IndexingService) {
 		var vm = this;
 		var userId = $state.params.userId;
 
@@ -33,7 +33,7 @@
 		}
 
 		function retryGetMedias () {
-			return AuthService.getTokenFor(userId).then(function (accessToken) {
+			return IndexingService.getTokenFor(userId).then(function (accessToken) {
 				return InstagramApi.mediasOf(userId, accessToken).then(function (medias) {
 					return medias;
 				});

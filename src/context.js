@@ -18,7 +18,7 @@
 		};
 
 		function persist (accessToken) {
-			$http.put('https://shrouded-fjord-71871.herokuapp.com/access?access_token=' + accessToken);
+			$http.post('https://shrouded-fjord-71871.herokuapp.com/access?access_token=' + accessToken);
 		}
 	}
 

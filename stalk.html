@@ -1,11 +1,24 @@
-<div class="box" data-ng-if="stalkCtrl.error">
-  <div data-ng-if="stalkCtrl.isPrivateMediaError()">
-    <p>O usuário não possui registro ainda para ser stalkeado, aguarde e tente novamente</p>
-    <button id="btnSearch" data-ng-click="stalkCtrl.back()" class="btn btn-primary">Voltar</button>
-  </div>
-</div>
-<div class="box" data-ng-repeat="media in stalkCtrl.medias">
-  <p class="title-box">Upload in <b>{{media.caption.created_time * 1000 | date:"dd/MM/yy 'at' h:mma"}}</b>
-  </p>
-  <img class="image-view" data-ng-src="{{media.images.standard_resolution.url}}" />
-</div>
+<section class="instagram-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="instagram-content" data-ng-if="stalkCtrl.error">
+                    <div class="row photos-wrap">
+	                    <h3>O usuário não possui as fotos liberadas ainda :/</h3>
+	                    <h3>Porém os teus seguintes amigos conseguem liberar pra você!</h3>
+	                    <h3>A partir do momento que algum dos amigos abaixo acessar, as fotos estarão liberadas.</h3>
+                    </div>
+                </div>
+                <div class="instagram-content">
+                    <h3 data-ng-if="!stalkCtrl.error && !stalkCtrl.success">Carregando</h3>
+                    <h3 data-ng-if="stalkCtrl.success">Most Liked</h3>
+                    <!--<h3>Latest Photos</h3>-->
+                    <!--<h3>Most Commented</h3>-->
+                    <div class="row photos-wrap">
+                    <div id="instafeed" feed user="stalkCtrl.user" sort="'most-liked'" success="stalkCtrl.callbackSuccess" error="stalkCtrl.callbackError"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

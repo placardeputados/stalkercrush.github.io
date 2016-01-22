@@ -16,6 +16,11 @@
 				controller: 'StartCtrl as startCtrl'
 			})
 
+			.state('terms', {
+				url: '/terms',
+				templateUrl: 'terms.html'
+			})
+
 			.state('app', {
 				data: { restrict: true },
 				url: '/app',
